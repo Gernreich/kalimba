@@ -14,7 +14,7 @@ and cuts at real size.
 </table>
 
 *Click it to download the cut file. This is a display rendering — the cut file draws a
-hairline on no background, which a browser shows almost invisibly.*
+hairline on no background, which a browser shows almost invisibly. Green, orange and cyan are darkened in the picture — at full strength they are too pale to read against a light ground. The cut file keeps the exact values.*
 
 **[Read the writeup](https://gernreich.github.io/kalimba/)**
 

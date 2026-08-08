@@ -26,8 +26,8 @@ Released under CC0 1.0 — do what you like with them, no attribution needed. Bu
 
 Click the picture to download the cut file. It is a display rendering — the cut file
 draws a hairline on no background at all, which a browser shows almost invisibly, so
-this is thickened and painted onto a light ground. Colours, geometry and sheet position
-are untouched.
+this is thickened and painted onto a light ground. Geometry and sheet position are
+untouched. The three lightest cut-order inks — green, orange and cyan — are darkened in these pictures. At full strength they fall below the contrast a light background can carry, so the cut order could not be read off them. Hue and sequence are unchanged, and the cut files keep the exact values.
 
 <div class="tw">
 <table>
