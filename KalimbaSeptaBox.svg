@@ -152,7 +152,7 @@ SettingsUrl short: https://boxes.hackerspace-bamberg.de/RegularBox?h=65&amp;radi
   <g
      id="cut"
      fill="none"
-     stroke="#ff0000"
+     stroke="#00ff00"
      stroke-width="0.1"
      transform="matrix(0.79118978,-0.16256493,0.1642255,0.78318967,276.97979,194.41153)">
     <path
@@ -171,21 +171,21 @@ SettingsUrl short: https://boxes.hackerspace-bamberg.de/RegularBox?h=65&amp;radi
        id="path2-6" />
   </g>
   <circle
-     style="vector-effect:non-scaling-stroke;fill:none;stroke:#ff0000;stroke-width:0.14784;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline"
+     style="vector-effect:non-scaling-stroke;fill:none;stroke:#00ff00;stroke-width:0.14784;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline"
      id="path11"
      cx="91.997124"
      cy="205.16133"
      r="7.5" />
   <path
-     style="vector-effect:non-scaling-stroke;fill:none;stroke:#ff00ff;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline"
+     style="vector-effect:non-scaling-stroke;fill:none;stroke:#ff8000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline"
      d="m 108.97699,86.836991 c 25.7973,32.965179 25.7973,32.965179 25.7973,32.965179 l 7.61053,3.75152 65.85744,0.6046 7.6776,-3.61057 26.39748,-32.486209 z"
      id="path12" />
   <path
-     style="vector-effect:non-scaling-stroke;fill:none;stroke:#ff00ff;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline"
+     style="vector-effect:non-scaling-stroke;fill:none;stroke:#ff8000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline"
      d="m 425.58499,136.93422 c -32.96517,25.7973 -32.96517,25.7973 -32.96517,25.7973 l -3.75152,7.61053 -0.6046,65.85744 3.61057,7.6776 32.4862,26.39748 z"
      id="path12-5" />
   <path
-     style="vector-effect:non-scaling-stroke;fill:none;stroke:#ff00ff;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline"
+     style="vector-effect:non-scaling-stroke;fill:none;stroke:#ff8000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline"
      d="m 430.59706,136.93422 c 32.96517,25.7973 32.96517,25.7973 32.96517,25.7973 l 3.75152,7.61053 0.6046,65.85744 -3.61057,7.6776 -32.4862,26.39748 z"
      id="path13" />
 </svg>

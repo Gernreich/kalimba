@@ -32,7 +32,7 @@ are untouched.
 <div class="tw">
 <table>
 <tr>
-<td align="center"><a href="KalimbaSeptaBox.svg"><img src="previews/KalimbaSeptaBox.svg" alt="The cut sheet: seven finger-jointed side panels, and two heptagonal faces — one carrying a septafoil knot rosette in red with blue engrave lines, the other a single small round hole" width="620"></a></td>
+<td align="center"><a href="KalimbaSeptaBox.svg"><img src="previews/KalimbaSeptaBox.svg" alt="The cut sheet: seven finger-jointed side panels, and two heptagonal faces — one carrying a septafoil knot rosette in green with blue engrave lines, the other a single small round hole" width="620"></a></td>
 </tr>
 <tr>
 <td align="center"><sub>KalimbaSeptaBox.svg · 495 × 279mm sheet</sub></td>
@@ -47,9 +47,9 @@ Measured out of the file, not copied from whatever drew it:
 | | Colour | Part | Count | Size |
 |---|---|---|---|---|
 | 1 | **blue `#0000ff`** | rosette interlace and rim lines | 1 | 50.1mm band |
-| 2 | **red `#ff0000`** | the rosette | 1 | 48.6mm across |
-| 2 | **red `#ff0000`** | round hole in the plain face | 1 | 15mm |
-| 3 | **purple `#ff00ff`** | reinforcing trapezoids | 3 | 133.3 × 37.3mm each |
+| 2 | **green `#00ff00`** | the rosette | 1 | 48.6mm across |
+| 2 | **green `#00ff00`** | round hole in the plain face | 1 | 15mm |
+| 3 | **orange `#ff8000`** | reinforcing trapezoids | 3 | 133.3 × 37.3mm each |
 | 4 | **black `#000000`** | face with the rosette | 1 | 175.8 × 171.7mm |
 | 4 | **black `#000000`** | face with the round hole | 1 | 175.8 × 171.4mm |
 | 4 | **black `#000000`** | side panels, finger-jointed | 7 | 79.3 × 65.3mm each |
@@ -62,9 +62,14 @@ of a 0.14mm line.
 
 ### Colour is the order, and blue is not a cut
 
-Run them **blue, red, purple, black** — engrave first, then cut outward from the detail
-to the outlines. Outlines last is the usual reason: once a cut frees a part, anything
-still to be cut inside it can move.
+Run them **blue, green, orange, black** — engrave first, then cut outward from the
+detail to the outlines. Outlines last is the usual reason: once a cut frees a part,
+anything still to be cut inside it can move.
+
+That sequence is shared by every LaserMadeMusic repository: blue engraves, then
+green → orange → cyan → black, with black always the cut that frees the part and violet
+meaning skip. This sheet uses four of the five — there is no cyan stage and nothing to
+skip.
 
 **The blue is an engrave.** Those lines are the rosette's over/under interlace hints and
 the short continuations carrying the ribbon's edges across the rim. They run across the
@@ -75,11 +80,11 @@ Give every colour you keep an explicit operation. A per-colour job silently skip
 colour you leave unmapped — leave the black unmapped and you will engrave a rosette and
 cut no parts.
 
-### The three purple trapezoids are optional
+### The three orange trapezoids are optional
 
 They glue underneath the top sheet of the heptagon to stiffen it, and the build stands
 up without them. Cut them if you want the face stronger — worth considering, since that
-face has the rosette cut out of it — and skip the purple stage entirely if you do not.
+face has the rosette cut out of it — and skip the orange stage entirely if you do not.
 
 ## The rosette
 

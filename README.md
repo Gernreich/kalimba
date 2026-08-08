@@ -6,7 +6,7 @@ and cuts at real size.
 
 <table>
 <tr>
-<td align="center"><a href="KalimbaSeptaBox.svg"><img src="previews/KalimbaSeptaBox.svg" alt="The cut sheet: seven finger-jointed side panels, and two heptagonal faces — one carrying a septafoil knot rosette in red with blue engrave lines, the other a single small round hole" width="620"></a></td>
+<td align="center"><a href="KalimbaSeptaBox.svg"><img src="previews/KalimbaSeptaBox.svg" alt="The cut sheet: seven finger-jointed side panels, and two heptagonal faces — one carrying a septafoil knot rosette in green with blue engrave lines, the other a single small round hole" width="620"></a></td>
 </tr>
 <tr>
 <td align="center"><sub>KalimbaSeptaBox.svg · 495 × 279mm sheet</sub></td>
@@ -27,15 +27,17 @@ and assembly are shown.
 
 Measured out of the file, not copied from whatever drew it:
 
-Run the colours **blue, red, purple, black** — engrave first, then cut from the detail
-outward to the outlines:
+Run the colours **blue, green, orange, black** — engrave first, then cut from the detail
+outward to the outlines. That is the sequence every LaserMadeMusic repository uses: blue
+engraves, then green → orange → cyan → black, black always the cut that frees the part.
+This sheet has no cyan stage.
 
 | | Colour | Part | Count | Size |
 |---|---|---|---|---|
 | 1 | blue `#0000ff` | rosette interlace and rim lines | 1 | 50.1mm band |
-| 2 | red `#ff0000` | the rosette | 1 | 48.6mm across |
-| 2 | red `#ff0000` | round hole in the plain face | 1 | 15mm |
-| 3 | purple `#ff00ff` | reinforcing trapezoids | 3 | 133.3 × 37.3mm each |
+| 2 | green `#00ff00` | the rosette | 1 | 48.6mm across |
+| 2 | green `#00ff00` | round hole in the plain face | 1 | 15mm |
+| 3 | orange `#ff8000` | reinforcing trapezoids | 3 | 133.3 × 37.3mm each |
 | 4 | black `#000000` | two faces and seven sides | 9 | faces 175.8 × 171mm, sides 79.3 × 65.3mm |
 
 Seven sides, two faces, and a rosette that is a septafoil — one ribbon crossing itself
@@ -46,9 +48,9 @@ severs it and the rosette comes apart as it leaves the machine. Give them a scor
 engrave operation, or delete the layer. Outlines go last so nothing moves once a cut
 frees it.
 
-**The three purple trapezoids are optional.** They glue under the top sheet of the
+**The three orange trapezoids are optional.** They glue under the top sheet of the
 heptagon to stiffen it — worth having, since that face has the rosette cut out of it —
-but the build stands up without them. Skip the purple stage if you do not want them.
+but the build stands up without them. Skip the orange stage if you do not want them.
 
 ## The rosette
 
