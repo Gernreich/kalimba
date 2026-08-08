@@ -4,6 +4,8 @@ A seven-sided kalimba body whose front carries a seven-fold knot rosette. Output
 millimetre-true — `1 user unit = 1 mm` with a physical `width`/`height` — so it prints
 and cuts at real size.
 
+**[Read the writeup](https://gernreich.github.io/kalimba/)**
+
 <table>
 <tr>
 <td align="center"><a href="KalimbaSeptaBox.svg"><img src="previews/KalimbaSeptaBox.svg" alt="The cut sheet: seven finger-jointed side panels, and two heptagonal faces — one carrying a septafoil knot rosette in green with blue engrave lines, the other a single small round hole" width="620"></a></td>
@@ -15,8 +17,6 @@ and cuts at real size.
 
 *Click it to download the cut file. This is a display rendering — the cut file draws a
 hairline on no background, which a browser shows almost invisibly. Green, orange and cyan are darkened in the picture — at full strength they are too pale to read against a light ground. The cut file keeps the exact values.*
-
-**[Read the writeup](https://gernreich.github.io/kalimba/)**
 
 Built for **[LaserMadeMusic](https://www.youtube.com/@LaserMadeMusic)**, where the cutting
 and assembly are shown.
