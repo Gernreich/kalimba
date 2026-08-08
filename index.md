@@ -44,30 +44,42 @@ are untouched.
 
 Measured out of the file, not copied from whatever drew it:
 
-| Part | Count | Size | Stroke |
-|---|---|---|---|
-| Side panels, finger-jointed | 7 | 79.3 × 65.3mm each | black |
-| Face, with the rosette | 1 | 175.8 × 171.7mm | black |
-| Face, with a round hole | 1 | 175.8 × 171.4mm | black |
-| Rosette | — | 48.6mm across | **red `#ff0000`** |
-| Round hole | — | 15mm | **red `#ff0000`** |
-| Rosette interlace and rim lines | — | 50.1mm band | **blue `#0000ff`** |
+| | Colour | Part | Count | Size |
+|---|---|---|---|---|
+| 1 | **blue `#0000ff`** | rosette interlace and rim lines | 1 | 50.1mm band |
+| 2 | **red `#ff0000`** | the rosette | 1 | 48.6mm across |
+| 2 | **red `#ff0000`** | round hole in the plain face | 1 | 15mm |
+| 3 | **purple `#ff00ff`** | reinforcing trapezoids | 3 | 133.3 × 37.3mm each |
+| 4 | **black `#000000`** | face with the rosette | 1 | 175.8 × 171.7mm |
+| 4 | **black `#000000`** | face with the round hole | 1 | 175.8 × 171.4mm |
+| 4 | **black `#000000`** | side panels, finger-jointed | 7 | 79.3 × 65.3mm each |
 
-Seven sides, two faces. Everything black or red is cut; the blue is not.
+Seven sides, two faces. The sheet is 495 × 279mm and millimetre-true —
+`1 user unit = 1 mm` with a physical `width`/`height` — so it prints and cuts at real
+size. Nothing hangs off it: the parts that appear to touch the top and bottom edges are
+sitting exactly on them, and the 0.07mm you may measure past is the drawn stroke, half
+of a 0.14mm line.
 
-The sheet is 495 × 279mm and millimetre-true — `1 user unit = 1 mm` with a physical
-`width`/`height` — so it prints and cuts at real size.
+### Colour is the order, and blue is not a cut
 
-### One thing to set before you send it
+Run them **blue, red, purple, black** — engrave first, then cut outward from the detail
+to the outlines. Outlines last is the usual reason: once a cut frees a part, anything
+still to be cut inside it can move.
 
-**The blue is an engrave, not a cut.** Those lines are the rosette's over/under interlace
-hints and the short continuations that carry the ribbon's edges across the rim. They run
-across the ribbon, so cutting them severs it and the rosette comes apart as it leaves the
-machine. Give them a score or engrave operation, or delete the layer.
+**The blue is an engrave.** Those lines are the rosette's over/under interlace hints and
+the short continuations carrying the ribbon's edges across the rim. They run across the
+ribbon, so cutting them severs it and the rosette comes apart as it leaves the machine.
+Give them a score or engrave operation, or delete the layer.
 
 Give every colour you keep an explicit operation. A per-colour job silently skips any
-colour you leave unmapped — leave the black unmapped and you will engrave a picture of a
-kalimba and cut no parts.
+colour you leave unmapped — leave the black unmapped and you will engrave a rosette and
+cut no parts.
+
+### The three purple trapezoids are optional
+
+They glue underneath the top sheet of the heptagon to stiffen it, and the build stands
+up without them. Cut them if you want the face stronger — worth considering, since that
+face has the rosette cut out of it — and skip the purple stage entirely if you do not.
 
 ## The rosette
 
