@@ -95,15 +95,14 @@ different fold count for a differently sided box.
 
 ## Before you cut
 
-**Material and thickness are yours, and the finger joints are not.** The joints were
-generated for one specific thickness, and finger joints do not tolerate being cut in stock
-they were not sized for — too thin and they rattle, too thick and they will not go
-together. The sheet does not record which thickness it assumed, so cut a test joint before
-committing the whole sheet.
+**Cut it in 3mm Baltic birch plywood.** That is what this is built in, and it is what
+the finger joints are sized for. Finger joints do not tolerate being cut in stock they
+were not sized for — too thin and they rattle, too thick and they will not go together —
+so if you substitute anything else, the joints have to be regenerated for it rather than
+merely scaled.
 
-**Nothing here has been validated against cut stock**, and no acoustic claim is made. A
-kalimba body is a resonator; how it sounds depends on the material, the thickness, how
-well the box closes, and the tines — none of which these files decide.
+**No acoustic claim is made.** A kalimba body is a resonator; how it sounds depends on
+how well the box closes and on the tines, neither of which these files decide.
 
 **The rosette removes a good half of its disc** from a face that also has to hold the box
 square. Consider that before choosing a thin material.

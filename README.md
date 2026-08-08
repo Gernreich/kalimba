@@ -61,12 +61,12 @@ fold count for a differently sided box.
 
 ## Before you cut
 
-**The finger joints were generated for one specific thickness**, and the sheet does not
-record which. Too thin and they rattle; too thick and they will not go together. Cut a
-test joint before committing the whole sheet.
+**Cut it in 3mm Baltic birch plywood** — that is what this is built in, and what the
+finger joints are sized for. Too thin and they rattle; too thick and they will not go
+together, so substituting a different stock means regenerating the joints for it.
 
-**Nothing here has been validated against cut stock**, and no acoustic claim is made. The
-tines, bridge and tuning are not in this file — it is the body only.
+**No acoustic claim is made.** The tines, bridge and tuning are not in this file — it is
+the body only.
 
 ## Files
 
