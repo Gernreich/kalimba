@@ -21,6 +21,9 @@ hairline on no background, which a browser shows almost invisibly. Green, orange
 Built for **[LaserMadeMusic](https://www.youtube.com/@LaserMadeMusic)**, where the cutting
 and assembly are shown.
 
+**[The rest of the build files](https://gernreich.github.io/)** — every instrument,
+generator and tool, indexed.
+
 **[Download everything as a ZIP](https://github.com/Gernreich/kalimba/archive/refs/heads/main.zip)**
 
 ## What is on the sheet

@@ -22,6 +22,9 @@ its own.
 Released under CC0 1.0 — do what you like with them, no attribution needed. Built for
 **[LaserMadeMusic](https://www.youtube.com/@LaserMadeMusic)**.
 
+**[The rest of the build files](https://gernreich.github.io/)** — every instrument,
+generator and tool, indexed.
+
 ## The sheet
 
 Click the picture to download the cut file. It is a display rendering — the cut file
