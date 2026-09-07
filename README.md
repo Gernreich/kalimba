@@ -37,11 +37,11 @@ This sheet has no cyan stage.
 
 | | Colour | Part | Count | Size |
 |---|---|---|---|---|
-| 1 | blue `#0000ff` | rosette interlace and rim lines | 1 | 50.1mm band |
-| 2 | green `#00ff00` | the rosette | 1 | 48.6mm across |
+| 1 | blue `#0000ff` | rosette interlace and rim lines | 1 | 50.0mm band |
+| 2 | green `#00ff00` | the rosette | 1 | 48.5mm across |
 | 2 | green `#00ff00` | round hole in the plain face | 1 | 15mm |
 | 3 | orange `#ff8000` | reinforcing trapezoids | 3 | 133.3 × 37.3mm each |
-| 4 | black `#000000` | two faces and seven sides | 9 | faces 175.8 × 171mm, sides 79.3 × 65.3mm |
+| 4 | black `#000000` | two faces and seven sides | 9 | faces 175.6 × 171mm, sides 79.1 × 65.1mm |
 
 Seven sides, two faces, and a rosette that is a septafoil — one ribbon crossing itself
 seven times, so the hole echoes the plan of the box.

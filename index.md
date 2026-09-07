@@ -49,15 +49,16 @@ Measured out of the file, not copied from whatever drew it:
 
 | | Colour | Part | Count | Size |
 |---|---|---|---|---|
-| 1 | **blue `#0000ff`** | rosette interlace and rim lines | 1 | 50.1mm band |
-| 2 | **green `#00ff00`** | the rosette | 1 | 48.6mm across |
+| 1 | **blue `#0000ff`** | rosette interlace and rim lines | 1 | 50.0mm band |
+| 2 | **green `#00ff00`** | the rosette | 1 | 48.5mm across |
 | 2 | **green `#00ff00`** | round hole in the plain face | 1 | 15mm |
 | 3 | **orange `#ff8000`** | reinforcing trapezoids | 3 | 133.3 × 37.3mm each |
-| 4 | **black `#000000`** | face with the rosette | 1 | 175.8 × 171.7mm |
-| 4 | **black `#000000`** | face with the round hole | 1 | 175.8 × 171.4mm |
-| 4 | **black `#000000`** | side panels, finger-jointed | 7 | 79.3 × 65.3mm each |
+| 4 | **black `#000000`** | face with the rosette | 1 | 175.6 × 171.6mm |
+| 4 | **black `#000000`** | face with the round hole | 1 | 175.6 × 171.2mm |
+| 4 | **black `#000000`** | side panels, finger-jointed | 7 | 79.1 × 65.1mm each |
 
-Seven sides, two faces. The sheet is 495 × 279mm and millimetre-true —
+Sizes are the cut path itself, not its drawn outline — the path is what the laser
+follows. Seven sides, two faces. The sheet is 495 × 279mm and millimetre-true —
 `1 user unit = 1 mm` with a physical `width`/`height` — so it prints and cuts at real
 size. Nothing hangs off it: the parts that appear to touch the top and bottom edges are
 sitting exactly on them, and the 0.07mm you may measure past is the drawn stroke, half
@@ -91,7 +92,7 @@ face has the rosette cut out of it — and skip the orange stage entirely if you
 
 ## The rosette
 
-One self-crossing ribbon with seven crossings, 48.6mm across. It is a **cut-out**: the
+One self-crossing ribbon with seven crossings, 48.5mm across. It is a **cut-out**: the
 removed material is the open area and the ribbon is what stays, and the ribbon's peaks
 deliberately overrun the rim so the rosette fuses into the face rather than dropping out
 when the last cut closes. There is no continuous rim circle in the cut layer, and that is
@@ -107,7 +108,19 @@ different fold count for a differently sided box.
 the finger joints are sized for. Finger joints do not tolerate being cut in stock they
 were not sized for — too thin and they rattle, too thick and they will not go together —
 so if you substitute anything else, the joints have to be regenerated for it rather than
-merely scaled.
+merely scaled. [boxes.py](https://festi.info/boxes.py/) is the route: its `RegularBox`
+generator draws an n-sided finger-jointed box and cuts the fingers for whatever
+`--thickness` you give it.
+
+```
+boxes --generator RegularBox --n 7 --radius_bottom 91 --h 65 \
+      --thickness 4 --top closed --output heptagon.svg
+```
+
+That is a seven-sided body in 4mm stock. It is not this sheet — `--radius_bottom` is an
+inner radius measured at the corners, so the panel sizes come out near these rather than
+equal to them, and you will want to check them against the table above before cutting.
+The rosette is not part of it either; cut that separately into the face.
 
 **No acoustic claim is made.** A kalimba body is a resonator; how it sounds depends on
 how well the box closes and on the tines, neither of which these files decide.

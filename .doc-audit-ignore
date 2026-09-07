@@ -1,0 +1,16 @@
+# Names doc-audit reads as filenames that are not files here.
+#
+# The "Before you cut" section points at boxes.py for regenerating the finger
+# joints in another stock thickness, and shows the command:
+#
+#     boxes --generator RegularBox --n 7 --radius_bottom 91 --h 65 \
+#           --thickness 4 --top closed --output heptagon.svg
+#
+# The checker keeps filenames found inside fenced blocks on purpose, because
+# `node foo.js` in a shell block is a real reference to foo.js. Here both names
+# are something else: boxes.py is the name of another project (linked in the
+# prose), and heptagon.svg is the file that command would write for the reader.
+# Neither is shipped from this repository.
+
+boxes.py
+heptagon.svg
