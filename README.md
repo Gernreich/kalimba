@@ -69,6 +69,9 @@ fold count for a differently sided box.
 **Cut it in 3mm Baltic birch plywood** — that is what this is built in, and what the
 finger joints are sized for. Too thin and they rattle; too thick and they will not go
 together, so substituting a different stock means regenerating the joints for it.
+`KalimbaSeptaBox.svg` came off **[Boxes.py](https://github.com/florianfesti/boxes)**'s
+`RegularBox` generator, which is where you regenerate them; the published page carries
+the command.
 
 **No acoustic claim is made.** The tines, bridge and tuning are not in this file — it is
 the body only.
@@ -81,4 +84,6 @@ the body only.
 | `previews/` | display rendering — **not** a cut file |
 | `index.md` · `index.html` | the published page; the markdown is the source |
 
-Released under [CC0 1.0](LICENSE).
+Released under [CC0 1.0](LICENSE). **Boxes.py is Florian Festi's and is
+GPL-3.0-or-later** — none of it is in this repository, and a sheet it drew is not
+covered by its licence.

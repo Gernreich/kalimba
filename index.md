@@ -19,7 +19,10 @@ its own.
 - **[Repository](https://github.com/Gernreich/kalimba)** — if you want to change the box
   or the rosette.
 
-Released under CC0 1.0 — do what you like with them, no attribution needed. Built for
+Released under CC0 1.0 — do what you like with them, no attribution needed. The sheet
+was drawn by **[Boxes.py](https://github.com/florianfesti/boxes)**, Florian Festi's box
+generator, which is GPL-3.0-or-later; a drawing it produces is not covered by that
+licence, and none of Boxes.py is in this repository. Built for
 **[LaserMadeMusic](https://www.youtube.com/@LaserMadeMusic)**.
 
 **[The rest of the build files](https://gernreich.github.io/)** — every instrument,
@@ -108,9 +111,11 @@ different fold count for a differently sided box.
 the finger joints are sized for. Finger joints do not tolerate being cut in stock they
 were not sized for — too thin and they rattle, too thick and they will not go together —
 so if you substitute anything else, the joints have to be regenerated for it rather than
-merely scaled. [boxes.py](https://festi.info/boxes.py/) is the route: its `RegularBox`
-generator draws an n-sided finger-jointed box and cuts the fingers for whatever
-`--thickness` you give it.
+merely scaled. [Boxes.py](https://github.com/florianfesti/boxes) is the route: its
+`RegularBox` generator draws an n-sided finger-jointed box and cuts the fingers for
+whatever `--thickness` you give it. **Boxes.py is Florian Festi's, and is
+GPL-3.0-or-later** — it is not included here, and the sheet below is something it drew
+rather than any part of it.
 
 ```
 boxes --generator RegularBox --n 7 --radius_bottom 91 --h 65 \
