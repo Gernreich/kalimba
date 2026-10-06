@@ -1,5 +1,7 @@
 # Kalimba — a seven-sided body with a septafoil rosette
 
+**[Read the README](https://github.com/Gernreich/kalimba)**
+
 A kalimba is a lamellophone: tuned metal tines fixed over a bridge on a resonating
 body, plucked with the thumbs. This repository holds the **body** — a seven-sided box
 whose front carries a seven-fold knot rosette.

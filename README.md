@@ -1,10 +1,10 @@
 # Kalimba
 
+**[Read the writeup](https://gernreich.github.io/kalimba/)**
+
 A seven-sided kalimba body whose front carries a seven-fold knot rosette. Output is
 millimetre-true — `1 user unit = 1 mm` with a physical `width`/`height` — so it prints
 and cuts at real size.
-
-**[Read the writeup](https://gernreich.github.io/kalimba/)**
 
 <table>
 <tr>
