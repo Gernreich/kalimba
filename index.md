@@ -40,7 +40,7 @@ untouched. The three lightest cut-order inks — green, orange and cyan — are 
 <div class="tw">
 <table>
 <tr>
-<td align="center"><a href="KalimbaSeptaBox.svg"><img src="previews/KalimbaSeptaBox.svg" alt="The cut sheet: seven finger-jointed side panels, and two heptagonal faces — one carrying a septafoil knot rosette in green with blue engrave lines, the other a single small round hole" width="620"></a></td>
+<td align="center"><a href="KalimbaSeptaBox.svg"><img src="previews/KalimbaSeptaBox.svg" alt="The cut sheet: seven finger-jointed side panels, and two heptagonal faces — one carrying a septafoil knot rosette in green with blue engrave lines, the other a single small round hole" width="100%"></a></td>
 </tr>
 <tr>
 <td align="center"><sub>KalimbaSeptaBox.svg · 495 × 279mm sheet</sub></td>
