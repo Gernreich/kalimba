@@ -2,6 +2,8 @@
 
 **[Read the writeup](https://gernreich.github.io/kalimba/)**
 
+**[Turn it in 3D](https://gernreich.github.io/kalimba/kalimba-3d.html)**
+
 A seven-sided kalimba body whose front carries a seven-fold knot rosette. Output is
 millimetre-true — `1 user unit = 1 mm` with a physical `width`/`height` — so it prints
 and cuts at real size.
@@ -82,6 +84,9 @@ the body only.
 |---|---|
 | `KalimbaSeptaBox.svg` | the whole body — seven sides, two faces, rosette |
 | `previews/` | display rendering — **not** a cut file |
+| `kalimba-3d.html` | the 3D view, assembled from the cut files — drag to turn |
+| `viewer.py` | builds `kalimba-3d.html` from the cut files, with the turn3d module in lasermade-tools |
+| `.repro` | how every shipped drawing and page is reproduced |
 | `index.md` · `index.html` | the published page; the markdown is the source |
 
 Released under [CC0 1.0](LICENSE). **Boxes.py is Florian Festi's and is

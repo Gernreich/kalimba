@@ -2,6 +2,8 @@
 
 **[Read the README](https://github.com/Gernreich/kalimba)**
 
+**[Turn it in 3D](https://gernreich.github.io/kalimba/kalimba-3d.html)**
+
 A kalimba is a lamellophone: tuned metal tines fixed over a bridge on a resonating
 body, plucked with the thumbs. This repository holds the **body** — a seven-sided box
 whose front carries a seven-fold knot rosette.
@@ -141,4 +143,7 @@ square. Consider that before choosing a thin material.
 |---|---|
 | `KalimbaSeptaBox.svg` | the whole body — seven sides, two faces, rosette |
 | `previews/` | display rendering — **not** a cut file |
+| `kalimba-3d.html` | the 3D view, assembled from the cut files — drag to turn |
+| `viewer.py` | builds `kalimba-3d.html` from the cut files, with the turn3d module in lasermade-tools |
+| `.repro` | how every shipped drawing and page is reproduced |
 | `index.md` · `index.html` | this page; the markdown is the source |
