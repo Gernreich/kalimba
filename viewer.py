@@ -112,7 +112,9 @@ def main(argv):
     o = [a.split('=', 1)[1] for a in argv if a.startswith('--out=')]
     path = o[0] if o else os.path.join(HERE, 'kalimba-3d.html')
     t.write(path, 'Kalimba body', build(),
-            'Drag to turn, scroll or pinch to zoom; draw Explode to take it apart. Every part is the '
+            'Drag to turn; right-drag, shift-drag or move two fingers to slide the view; '
+            'scroll or pinch to zoom in on whatever is under the pointer; double-click a part '
+            'to turn round it, and Reset view to go back. Draw Explode to take it apart. Every part is the '
             'cut file’s own outline at 3mm: the plain face with its round hole underneath, seven '
             'finger-jointed walls, and the septafoil rosette face on top. The sheet’s three '
             'optional stiffeners are left out, because nothing says where under the rosette face they go. '
