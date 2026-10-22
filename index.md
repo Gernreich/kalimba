@@ -1,5 +1,7 @@
 # Kalimba — a seven-sided body with a septafoil rosette
 
+**[← All projects](https://gernreich.github.io/)**
+
 **[Read the README](https://github.com/Gernreich/kalimba)**
 
 **[Turn it in 3D](https://gernreich.github.io/kalimba/kalimba-3d.html)**
@@ -29,7 +31,7 @@ generator, which is GPL-3.0-or-later; a drawing it produces is not covered by th
 licence, and none of Boxes.py is in this repository. Built for
 **[LaserMadeMusic](https://www.youtube.com/@LaserMadeMusic)**.
 
-**[The rest of the build files](https://gernreich.github.io/)** — every instrument,
+**[The rest of the build files](https://gernreich.github.io/lasermademusic.html)** — every instrument,
 generator and tool, indexed.
 
 ## The sheet

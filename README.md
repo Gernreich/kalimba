@@ -1,5 +1,7 @@
 # Kalimba
 
+**[← All projects](https://gernreich.github.io/)**
+
 **[Read the writeup](https://gernreich.github.io/kalimba/)**
 
 **[Turn it in 3D](https://gernreich.github.io/kalimba/kalimba-3d.html)**
@@ -23,7 +25,7 @@ hairline on no background, which a browser shows almost invisibly. Green, orange
 Built for **[LaserMadeMusic](https://www.youtube.com/@LaserMadeMusic)**, where the cutting
 and assembly are shown.
 
-**[The rest of the build files](https://gernreich.github.io/)** — every instrument,
+**[The rest of the build files](https://gernreich.github.io/lasermademusic.html)** — every instrument,
 generator and tool, indexed.
 
 **[Download everything as a ZIP](https://github.com/Gernreich/kalimba/archive/refs/heads/main.zip)**
