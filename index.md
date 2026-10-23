@@ -6,7 +6,7 @@
 
 **[Turn it in 3D](https://gernreich.github.io/kalimba/kalimba-3d.html)**
 
-<iframe src="kalimba-3d.html" title="The kalimba body as solid parts you can drag to turn and pull apart: the plain face with its round hole underneath, seven finger-jointed walls, and the septafoil rosette face on top" style="width:100%;height:560px;border:0"></iframe>
+<iframe src="kalimba-3d.html?embed" title="The kalimba body as solid parts you can drag to turn and pull apart: the plain face with its round hole underneath, seven finger-jointed walls, and the septafoil rosette face on top" style="width:100%;height:560px;border:0"></iframe>
 
 A kalimba is a lamellophone: tuned metal tines fixed over a bridge on a resonating
 body, plucked with the thumbs. This repository holds the **body** — a seven-sided box
