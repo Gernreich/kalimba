@@ -94,3 +94,7 @@ the body only.
 Released under [CC0 1.0](LICENSE). **Boxes.py is Florian Festi's and is
 GPL-3.0-or-later** — none of it is in this repository, and a sheet it drew is not
 covered by its licence.
+
+## Credits
+
+Made by Michael Gernreich with [Claude](https://www.anthropic.com/claude) (Anthropic), working in Claude Code, which co-wrote the code and the documentation. Commits Claude made carry a `Co-Authored-By: Claude` line.

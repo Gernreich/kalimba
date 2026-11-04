@@ -151,3 +151,7 @@ square. Consider that before choosing a thin material.
 | `viewer.py` | builds `kalimba-3d.html` from the cut files, with the turn3d module in lasermade-tools |
 | `.repro` | how every shipped drawing and page is reproduced |
 | `index.md` · `index.html` | this page; the markdown is the source |
+
+## Credits
+
+Made by Michael Gernreich with [Claude](https://www.anthropic.com/claude) (Anthropic), working in Claude Code, which co-wrote the code and the documentation. Commits Claude made carry a `Co-Authored-By: Claude` line.
