@@ -15,7 +15,7 @@ and cuts at real size.
 <td align="center"><a href="KalimbaSeptaBox.svg"><img src="previews/KalimbaSeptaBox.svg" alt="The cut sheet: seven finger-jointed side panels, and two heptagonal faces — one carrying a septafoil knot rosette in green with blue engrave lines, the other a single small round hole" width="100%"></a></td>
 </tr>
 <tr>
-<td align="center"><sub>KalimbaSeptaBox.svg · 495 × 279mm sheet</sub></td>
+<td align="center"><sub>KalimbaSeptaBox.svg · 495 × 279 mm sheet</sub></td>
 </tr>
 </table>
 
@@ -41,11 +41,11 @@ This sheet has no cyan stage.
 
 | | Colour | Part | Count | Size |
 |---|---|---|---|---|
-| 1 | blue `#0000ff` | rosette interlace and rim lines | 1 | 50.0mm band |
-| 2 | green `#00ff00` | the rosette | 1 | 48.5mm across |
-| 2 | green `#00ff00` | round hole in the plain face | 1 | 15mm |
-| 3 | orange `#ff8000` | reinforcing trapezoids | 3 | 133.3 × 37.3mm each |
-| 4 | black `#000000` | two faces and seven sides | 9 | faces 175.6 × 171mm, sides 79.1 × 65.1mm |
+| 1 | blue `#0000ff` | rosette interlace and rim lines | 1 | 50.0 mm band |
+| 2 | green `#00ff00` | the rosette | 1 | 48.5 mm across |
+| 2 | green `#00ff00` | round hole in the plain face | 1 | 15 mm |
+| 3 | orange `#ff8000` | reinforcing trapezoids | 3 | 133.3 × 37.3 mm each |
+| 4 | black `#000000` | two faces and seven sides | 9 | faces 175.6 × 171 mm, sides 79.1 × 65.1 mm |
 
 Seven sides, two faces, and a rosette that is a septafoil — one ribbon crossing itself
 seven times, so the hole echoes the plan of the box.
@@ -70,7 +70,7 @@ fold count for a differently sided box.
 
 ## Before you cut
 
-**Cut it in 3mm Baltic birch plywood** — that is what this is built in, and what the
+**Cut it in 3 mm Baltic birch plywood** — that is what this is built in, and what the
 finger joints are sized for. Too thin and they rattle; too thick and they will not go
 together, so substituting a different stock means regenerating the joints for it.
 `KalimbaSeptaBox.svg` came off **[Boxes.py](https://github.com/florianfesti/boxes)**'s

@@ -49,7 +49,7 @@ untouched. The three lightest cut-order inks — green, orange and cyan — are 
 <td align="center"><a href="KalimbaSeptaBox.svg"><img src="previews/KalimbaSeptaBox.svg" alt="The cut sheet: seven finger-jointed side panels, and two heptagonal faces — one carrying a septafoil knot rosette in green with blue engrave lines, the other a single small round hole" width="100%"></a></td>
 </tr>
 <tr>
-<td align="center"><sub>KalimbaSeptaBox.svg · 495 × 279mm sheet</sub></td>
+<td align="center"><sub>KalimbaSeptaBox.svg · 495 × 279 mm sheet</sub></td>
 </tr>
 </table>
 </div>
@@ -60,20 +60,20 @@ Measured out of the file, not copied from whatever drew it:
 
 | | Colour | Part | Count | Size |
 |---|---|---|---|---|
-| 1 | **blue `#0000ff`** | rosette interlace and rim lines | 1 | 50.0mm band |
-| 2 | **green `#00ff00`** | the rosette | 1 | 48.5mm across |
-| 2 | **green `#00ff00`** | round hole in the plain face | 1 | 15mm |
-| 3 | **orange `#ff8000`** | reinforcing trapezoids | 3 | 133.3 × 37.3mm each |
-| 4 | **black `#000000`** | face with the rosette | 1 | 175.6 × 171.6mm |
-| 4 | **black `#000000`** | face with the round hole | 1 | 175.6 × 171.2mm |
-| 4 | **black `#000000`** | side panels, finger-jointed | 7 | 79.1 × 65.1mm each |
+| 1 | **blue `#0000ff`** | rosette interlace and rim lines | 1 | 50.0 mm band |
+| 2 | **green `#00ff00`** | the rosette | 1 | 48.5 mm across |
+| 2 | **green `#00ff00`** | round hole in the plain face | 1 | 15 mm |
+| 3 | **orange `#ff8000`** | reinforcing trapezoids | 3 | 133.3 × 37.3 mm each |
+| 4 | **black `#000000`** | face with the rosette | 1 | 175.6 × 171.6 mm |
+| 4 | **black `#000000`** | face with the round hole | 1 | 175.6 × 171.2 mm |
+| 4 | **black `#000000`** | side panels, finger-jointed | 7 | 79.1 × 65.1 mm each |
 
 Sizes are the cut path itself, not its drawn outline — the path is what the laser
-follows. Seven sides, two faces. The sheet is 495 × 279mm and millimetre-true —
+follows. Seven sides, two faces. The sheet is 495 × 279 mm and millimetre-true —
 `1 user unit = 1 mm` with a physical `width`/`height` — so it prints and cuts at real
 size. Nothing hangs off it: the parts that appear to touch the top and bottom edges are
-sitting exactly on them, and the 0.07mm you may measure past is the drawn stroke, half
-of a 0.14mm line.
+sitting exactly on them, and the 0.07 mm you may measure past is the drawn stroke, half
+of a 0.14 mm line.
 
 ### Colour is the order, and blue is not a cut
 
@@ -103,7 +103,7 @@ face has the rosette cut out of it — and skip the orange stage entirely if you
 
 ## The rosette
 
-One self-crossing ribbon with seven crossings, 48.5mm across. It is a **cut-out**: the
+One self-crossing ribbon with seven crossings, 48.5 mm across. It is a **cut-out**: the
 removed material is the open area and the ribbon is what stays, and the ribbon's peaks
 deliberately overrun the rim so the rosette fuses into the face rather than dropping out
 when the last cut closes. There is no continuous rim circle in the cut layer, and that is
@@ -115,7 +115,7 @@ different fold count for a differently sided box.
 
 ## Before you cut
 
-**Cut it in 3mm Baltic birch plywood.** That is what this is built in, and it is what
+**Cut it in 3 mm Baltic birch plywood.** That is what this is built in, and it is what
 the finger joints are sized for. Finger joints do not tolerate being cut in stock they
 were not sized for — too thin and they rattle, too thick and they will not go together —
 so if you substitute anything else, the joints have to be regenerated for it rather than
@@ -130,7 +130,7 @@ boxes --generator RegularBox --n 7 --radius_bottom 91 --h 65 \
       --thickness 4 --top closed --output heptagon.svg
 ```
 
-That is a seven-sided body in 4mm stock. It is not this sheet — `--radius_bottom` is an
+That is a seven-sided body in 4 mm stock. It is not this sheet — `--radius_bottom` is an
 inner radius measured at the corners, so the panel sizes come out near these rather than
 equal to them, and you will want to check them against the table above before cutting.
 The rosette is not part of it either; cut that separately into the face.
