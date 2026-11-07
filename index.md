@@ -148,7 +148,8 @@ square. Consider that before choosing a thin material.
 | `KalimbaSeptaBox.svg` | the whole body — seven sides, two faces, rosette |
 | `previews/` | display rendering — **not** a cut file |
 | `kalimba-3d.html` | the 3D view, assembled from the cut files — drag to turn |
-| `viewer.py` | builds `kalimba-3d.html` from the cut files, with the turn3d module in lasermade-tools |
+| `viewer.rs` | builds `kalimba-3d.html` from the cut files, with the turn3d module in lasermade-tools: `cargo build --release`, then `target/release/viewer` |
+| `Cargo.toml` · `Cargo.lock` | the Rust package for `viewer.rs`; it expects the lasermade-tools checkout beside this one |
 | `.repro` | how every shipped drawing and page is reproduced |
 | `index.md` · `index.html` | this page; the markdown is the source |
 
