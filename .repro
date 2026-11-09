@@ -1,13 +1,13 @@
 # How every shipped SVG and page in this repository is drawn. Checked by
 # lasermade-tools' repro-svg; $OUT is where the file must be written.
 #
-# The 3D viewer is built from the cut files by viewer.rs (Rust; repro-svg
-# builds it), which reads them with lasermade-tools' turn3d module, so it
-# expects that checkout beside this one.
+# kalimba.rs (Rust) draws the cut file and writes the SolidCraft design. It
+# reads the rosette from the knotwork-soundholes checkout beside this one.
+# The 3D viewer is built from the cut file by viewer.rs, which reads it with
+# lasermade-tools' turn3d module, so it expects that checkout beside this one.
 
-# --- the cut files: no command in this repository redraws them. They are
-# the source the previews and the viewer are built from. ---
-KalimbaSeptaBox.svg :: !
+# --- the cut file ---
+KalimbaSeptaBox.svg :: target/release/kalimba --out=$(dirname $OUT)
 
 # --- the previews: display renderings of the cut files ---
 previews/KalimbaSeptaBox.svg :: ../lasermade-tools/target/release/make-preview KalimbaSeptaBox.svg $OUT
@@ -16,6 +16,7 @@ previews/KalimbaSeptaBox.svg :: ../lasermade-tools/target/release/make-preview K
 index.html :: ../lasermade-tools/target/release/md2html index.md $OUT
 kalimba-3d.html :: target/release/viewer --out=$OUT
 
-# --- the STEP files: the 3D view's parts as solids for a CAD program, one
-# file per design, written from the page by lasermade-tools' step-export ---
-step/kalimba-septa-box.step :: ../lasermade-tools/target/release/step-export kalimba-3d.html --name=kalimba --out=$(dirname $OUT)
+# --- the SolidCraft design, and the .sc and STEP files SolidCraft builds from it ---
+solidcraft/kalimba-septa-box.solidcraft.json :: target/release/kalimba --no-write --solidcraft=$(dirname $OUT)
+solidcraft/kalimba-septa-box.sc :: target/release/kalimba --no-write --solidcraft=$(dirname $OUT) && solidcraft-cli run $(dirname $OUT)/kalimba-septa-box.solidcraft.json --save $OUT --quiet && ../lasermade-tools/target/release/sc-slim $OUT
+step/kalimba-septa-box.step :: target/release/kalimba --no-write --solidcraft=$(dirname $OUT) && solidcraft-cli run $(dirname $OUT)/kalimba-septa-box.solidcraft.json --out $OUT --quiet

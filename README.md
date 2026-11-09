@@ -15,7 +15,7 @@ and cuts at real size.
 <td align="center"><a href="KalimbaSeptaBox.svg"><img src="previews/KalimbaSeptaBox.svg" alt="The cut sheet: seven finger-jointed side panels, and two heptagonal faces — one carrying a septafoil knot rosette in green with blue engrave lines, the other a single small round hole" width="100%"></a></td>
 </tr>
 <tr>
-<td align="center"><sub>KalimbaSeptaBox.svg · 495 × 279 mm sheet</sub></td>
+<td align="center"><sub>KalimbaSeptaBox.svg · 578 × 245 mm sheet</sub></td>
 </tr>
 </table>
 
@@ -41,11 +41,11 @@ This sheet has no cyan stage.
 
 | | Colour | Part | Count | Size |
 |---|---|---|---|---|
-| 1 | blue `#0000ff` | rosette interlace and rim lines | 1 | 50.0 mm band |
-| 2 | green `#00ff00` | the rosette | 1 | 48.5 mm across |
+| 1 | blue `#0000ff` | rosette interlace and rim lines | 1 | 49.5 mm band |
+| 2 | green `#00ff00` | the rosette | 1 | 48 mm across |
 | 2 | green `#00ff00` | round hole in the plain face | 1 | 15 mm |
-| 3 | orange `#ff8000` | reinforcing trapezoids | 3 | 133.3 × 37.3 mm each |
-| 4 | black `#000000` | two faces and seven sides | 9 | faces 175.6 × 171 mm, sides 79.1 × 65.1 mm |
+| 3 | orange `#ff8000` | stiffeners | 3 | 133.3 × 36.4 mm each |
+| 4 | black `#000000` | two faces and seven sides | 9 | faces 175.6 × 171.2 mm, sides 79.1 × 65.1 mm |
 
 Seven sides, two faces, and a rosette that is a septafoil — one ribbon crossing itself
 seven times, so the hole echoes the plan of the box.
@@ -55,7 +55,7 @@ severs it and the rosette comes apart as it leaves the machine. Give them a scor
 engrave operation, or delete the layer. Outlines go last so nothing moves once a cut
 frees it.
 
-**The three orange trapezoids are optional.** They glue under the top sheet of the
+**The three orange stiffeners are optional.** They glue under the top sheet of the
 heptagon to stiffen it — worth having, since that face has the rosette cut out of it —
 but the build stands up without them. Skip the orange stage if you do not want them.
 
@@ -73,12 +73,63 @@ fold count for a differently sided box.
 **Cut it in 3 mm Baltic birch plywood** — that is what this is built in, and what the
 finger joints are sized for. Too thin and they rattle; too thick and they will not go
 together, so substituting a different stock means regenerating the joints for it.
-`KalimbaSeptaBox.svg` came off **[Boxes.py](https://github.com/florianfesti/boxes)**'s
-`RegularBox` generator, which is where you regenerate them; the published page carries
-the command.
+`kalimba.rs` regenerates them for other stock: `--ply=`, below. The faces and walls
+carry a 0.14 mm kerf (their outlines grown 0.07 mm, round at the outside corners); if
+the fit comes out loose or tight, recut at your laser's kerf with `--kerf=` (the house
+measure is 0.13 mm).
 
 **No acoustic claim is made.** The tines, bridge and tuning are not in this file — it is
 the body only.
+
+## Changing it
+
+`kalimba.rs` draws the sheet from a few numbers. Build it with `cargo build --release`
+(it expects the lasermade-tools and knotwork-soundholes checkouts beside this one), then
+give it any of them as flags — a dash for each underscore; `--params` prints this table:
+
+```
+target/release/kalimba --ply=4 --kerf=0.13
+```
+
+PARAMS
+
+The box is the one **[Boxes.py](https://github.com/florianfesti/boxes)**'s `RegularBox`
+generator drew for this sheet (radius 90 outside, seven sides, h=65 outside, finger and
+space twice the ply, burn 0.07), worked out again from the same rules: the faces are the
+outside heptagon with a slot under every wall finger, and each wall stands on one edge,
+its fingers counted along the inside edge, one end fingered and the other cut back with
+slots for the next wall's. At the defaults every outline lies on Boxes.py's own to
+within 0.05 mm². The rosette is knotwork-soundholes' 2-lead knot with a bight for every
+side, read from its 30 mm cut file, scaled to `rosette_d` and turned so a bight points at
+every corner; the drawn one was the same file scaled by hand, a little skewed. `sides`
+must be odd, since a 2-lead knot needs an odd number of bights to be one strand. The
+stiffeners are slices of the inside heptagon, as the drawn ones were to a tenth of a
+millimetre.
+
+Every run prints a validation block and exits non-zero if a check fails.
+
+## SolidCraft design and STEP file
+
+`kalimba --solidcraft=DIR` writes the box as a parametric SolidCraft design, assembled:
+the plain face on the bench, the seven walls on its edges, the rosette face on top, one
+body each. Every parameter except the kerf and the stiffeners is a parameter of the
+design and every point is written from them. The kerf is not in it (it is the parts as
+they come off the laser), nor are the stiffeners (where they go is drawn nowhere); the
+number of sides and the finger counts `nb` and `nl` are read-only, as the defaults made
+them. SolidCraft builds the `.sc` and STEP files from it, and `.repro` checks all three:
+
+```
+solidcraft-cli run solidcraft/kalimba-septa-box.solidcraft.json --save solidcraft/kalimba-septa-box.sc --out step/kalimba-septa-box.step
+```
+
+- `solidcraft/kalimba-septa-box.solidcraft.json`
+- `solidcraft/kalimba-septa-box.sc`
+- `step/kalimba-septa-box.step`
+
+Checked against the generator body by body, at the defaults and with eight parameters
+moved: every volume within 2e-6. Neighbouring walls overlap by 37 mm³ at the inside of
+each corner (0.63 mm² over the wall's height) — RegularBox's angled finger joint as
+drawn; the fingers and the faces' slots do not overlap.
 
 ## Files
 
@@ -86,31 +137,18 @@ the body only.
 |---|---|
 | `KalimbaSeptaBox.svg` | the whole body — seven sides, two faces, rosette |
 | `previews/` | display rendering — **not** a cut file |
+| `kalimba.rs` | draws `KalimbaSeptaBox.svg` and writes the SolidCraft design: `target/release/kalimba` |
+| `solidcraft/` | the SolidCraft design and the `.sc` file built from it |
+| `step/` | the STEP file built from the design |
 | `kalimba-3d.html` | the 3D view, assembled from the cut files — drag to turn |
 | `viewer.rs` | builds `kalimba-3d.html` from the cut files, with the turn3d module in lasermade-tools: `cargo build --release`, then `target/release/viewer` |
-| `Cargo.toml` · `Cargo.lock` | the Rust package for `viewer.rs`; it expects the lasermade-tools checkout beside this one |
+| `Cargo.toml` · `Cargo.lock` | the Rust package for `kalimba.rs` and `viewer.rs`; it expects the lasermade-tools and knotwork-soundholes checkouts beside this one |
 | `.repro` | how every shipped drawing and page is reproduced |
 | `index.md` · `index.html` | the published page; the markdown is the source |
 
 Released under [CC0 1.0](LICENSE). **Boxes.py is Florian Festi's and is
-GPL-3.0-or-later** — none of it is in this repository, and a sheet it drew is not
-covered by its licence.
-
-## STEP files
-
-`step/` holds the 3D view as STEP files, one per design, to open or import in a
-CAD program such as SolidCraft, Fusion or FreeCAD: one solid body per part, in
-millimetres, assembled as the view shows it. Every face is flat, so a curve comes
-in as short straight runs; engraving has no depth and is left out. They are written
-from `kalimba-3d.html` by lasermade-tools' `step-export`, and `.repro` checks them:
-
-```
-../lasermade-tools/target/release/step-export kalimba-3d.html --name=kalimba
-```
-
-The files:
-
-- `step/kalimba-septa-box.step`
+GPL-3.0-or-later** — `kalimba.rs` follows its geometry, and none of its code is in this
+repository.
 
 ## Credits
 

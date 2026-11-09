@@ -99,7 +99,7 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 <body>
 <button class="tog" type="button">theme</button>
 <div class="wrap">
-<nav><b>Contents</b><a class="l1" href="#kalimba--a-seven-sided-body-with-a-septafoil-rosette">Kalimba — a seven-sided body with a septafoil rosette</a><a class="l2" href="#get-the-files">Get the files</a><a class="l2" href="#the-sheet">The sheet</a><a class="l2" href="#what-is-on-it">What is on it</a><a class="l2" href="#the-rosette">The rosette</a><a class="l2" href="#before-you-cut">Before you cut</a><a class="l2" href="#files">Files</a><a class="l2" href="#credits">Credits</a></nav>
+<nav><b>Contents</b><a class="l1" href="#kalimba--a-seven-sided-body-with-a-septafoil-rosette">Kalimba — a seven-sided body with a septafoil rosette</a><a class="l2" href="#get-the-files">Get the files</a><a class="l2" href="#the-sheet">The sheet</a><a class="l2" href="#what-is-on-it">What is on it</a><a class="l2" href="#the-rosette">The rosette</a><a class="l2" href="#before-you-cut">Before you cut</a><a class="l2" href="#changing-it">Changing it</a><a class="l2" href="#solidcraft-design-and-step-file">SolidCraft design and STEP file</a><a class="l2" href="#files">Files</a><a class="l2" href="#credits">Credits</a></nav>
 <main>
 <h1 id="kalimba--a-seven-sided-body-with-a-septafoil-rosette">Kalimba — a seven-sided body with a septafoil rosette</h1>
 <p><strong><a href="https://gernreich.github.io/" target="_blank" rel="noopener">← All projects</a></strong></p>
@@ -116,7 +116,7 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 <li><strong><a href="https://github.com/Gernreich/kalimba/archive/refs/heads/main.zip" target="_blank" rel="noopener">Everything as a ZIP</a></strong> — the cut file and this writeup.</li>
 <li><strong><a href="https://github.com/Gernreich/kalimba" target="_blank" rel="noopener">Repository</a></strong> — if you want to change the box or the rosette.</li>
 </ul>
-<p>Released under CC0 1.0 — do what you like with them, no attribution needed. The sheet was drawn by <strong><a href="https://github.com/florianfesti/boxes" target="_blank" rel="noopener">Boxes.py</a></strong>, Florian Festi's box generator, which is GPL-3.0-or-later; a drawing it produces is not covered by that licence, and none of Boxes.py is in this repository. Built for <strong><a href="https://www.youtube.com/@LaserMadeMusic" target="_blank" rel="noopener">LaserMadeMusic</a></strong>.</p>
+<p>Released under CC0 1.0 — do what you like with them, no attribution needed. The box is the one <strong><a href="https://github.com/florianfesti/boxes" target="_blank" rel="noopener">Boxes.py</a></strong>'s <code>RegularBox</code> generator draws (Boxes.py is Florian Festi's, and GPL-3.0-or-later); <code>kalimba.rs</code> works its geometry out again from the same rules, and no Boxes.py code is in this repository. Built for <strong><a href="https://www.youtube.com/@LaserMadeMusic" target="_blank" rel="noopener">LaserMadeMusic</a></strong>.</p>
 <p><strong><a href="https://gernreich.github.io/lasermademusic.html" target="_blank" rel="noopener">The rest of the build files</a></strong> — every instrument, generator and tool, indexed.</p>
 <h2 id="the-sheet">The sheet</h2>
 <p>Click the picture to download the cut file. It is a display rendering — the cut file draws a hairline on no background at all, which a browser shows almost invisibly, so this is thickened and painted onto a light ground. Geometry and sheet position are untouched. The three lightest cut-order inks — green, orange and cyan — are darkened in these pictures. At full strength they fall below the contrast a light background can carry, so the cut order could not be read off them. Hue and sequence are unchanged, and the cut files keep the exact values.</p>
@@ -126,7 +126,7 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 <td align="center"><a href="KalimbaSeptaBox.svg" target="_blank" rel="noopener"><img src="previews/KalimbaSeptaBox.svg" alt="The cut sheet: seven finger-jointed side panels, and two heptagonal faces — one carrying a septafoil knot rosette in green with blue engrave lines, the other a single small round hole" width="100%"></a></td>
 </tr>
 <tr>
-<td align="center"><sub>KalimbaSeptaBox.svg · 495 × 279 mm sheet</sub></td>
+<td align="center"><sub>KalimbaSeptaBox.svg · 578 × 245 mm sheet</sub></td>
 </tr>
 </table>
 </div>
@@ -150,14 +150,14 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 <td><strong>blue <code>#0000ff</code></strong></td>
 <td>rosette interlace and rim lines</td>
 <td>1</td>
-<td>50.0 mm band</td>
+<td>49.5 mm band</td>
 </tr>
 <tr>
 <td>2</td>
 <td><strong>green <code>#00ff00</code></strong></td>
 <td>the rosette</td>
 <td>1</td>
-<td>48.5 mm across</td>
+<td>48 mm across</td>
 </tr>
 <tr>
 <td>2</td>
@@ -169,16 +169,16 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 <tr>
 <td>3</td>
 <td><strong>orange <code>#ff8000</code></strong></td>
-<td>reinforcing trapezoids</td>
+<td>stiffeners</td>
 <td>3</td>
-<td>133.3 × 37.3 mm each</td>
+<td>133.3 × 36.4 mm each</td>
 </tr>
 <tr>
 <td>4</td>
 <td><strong>black <code>#000000</code></strong></td>
 <td>face with the rosette</td>
 <td>1</td>
-<td>175.6 × 171.6 mm</td>
+<td>175.6 × 171.2 mm</td>
 </tr>
 <tr>
 <td>4</td>
@@ -197,24 +197,118 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 </tbody>
 </table>
 </div>
-<p>Sizes are the cut path itself, not its drawn outline — the path is what the laser follows. Seven sides, two faces. The sheet is 495 × 279 mm and millimetre-true — <code>1 user unit = 1 mm</code> with a physical <code>width</code>/<code>height</code> — so it prints and cuts at real size. Nothing hangs off it: the parts that appear to touch the top and bottom edges are sitting exactly on them, and the 0.07 mm you may measure past is the drawn stroke, half of a 0.14 mm line.</p>
+<p>Sizes are the cut path itself, not its drawn outline — the path is what the laser follows. Seven sides, two faces. The sheet is 578 × 245 mm, with 3 mm round and between the parts, and millimetre-true — <code>1 user unit = 1 mm</code> with a physical <code>width</code>/<code>height</code> — so it prints and cuts at real size. The faces and walls carry a 0.14 mm kerf: their outlines are grown by 0.07 mm, round at the outside corners, so the joints press-fit once the laser has taken its line. The holes, the rosette and the stiffeners are drawn true; none of them is a fit.</p>
 <h3 id="colour-is-the-order-and-blue-is-not-a-cut">Colour is the order, and blue is not a cut</h3>
 <p>Run them <strong>blue, green, orange, black</strong> — engrave first, then cut outward from the detail to the outlines. Outlines last is the usual reason: once a cut frees a part, anything still to be cut inside it can move.</p>
 <p>That sequence is shared by every LaserMadeMusic repository: blue engraves, then green → orange → cyan → black, with black always the cut that frees the part and violet meaning skip. This sheet uses four of the five — there is no cyan stage and nothing to skip.</p>
 <p><strong>The blue is an engrave.</strong> Those lines are the rosette's over/under interlace hints and the short continuations carrying the ribbon's edges across the rim. They run across the ribbon, so cutting them severs it and the rosette comes apart as it leaves the machine. Give them a score or engrave operation, or delete the layer.</p>
 <p>Give every colour you keep an explicit operation. A per-colour job silently skips any colour you leave unmapped — leave the black unmapped and you will engrave a rosette and cut no parts.</p>
-<h3 id="the-three-orange-trapezoids-are-optional">The three orange trapezoids are optional</h3>
-<p>They glue underneath the top sheet of the heptagon to stiffen it, and the build stands up without them. Cut them if you want the face stronger — worth considering, since that face has the rosette cut out of it — and skip the orange stage entirely if you do not.</p>
+<h3 id="the-three-orange-stiffeners-are-optional">The three orange stiffeners are optional</h3>
+<p>They glue underneath the top sheet of the heptagon to stiffen it, and the build stands up without them. Each is a slice of the box's inside heptagon, 36.4 mm deep from the wall it sits against, with that wall's two corners cut back 4.7 mm to clear the joints. Cut them if you want the face stronger — worth considering, since that face has the rosette cut out of it — and skip the orange stage entirely if you do not.</p>
 <h2 id="the-rosette">The rosette</h2>
-<p>One self-crossing ribbon with seven crossings, 48.5 mm across. It is a <strong>cut-out</strong>: the removed material is the open area and the ribbon is what stays, and the ribbon's peaks deliberately overrun the rim so the rosette fuses into the face rather than dropping out when the last cut closes. There is no continuous rim circle in the cut layer, and that is correct — adding one drops the rosette on the floor.</p>
+<p>One self-crossing ribbon with seven crossings, 48 mm across: the 2-lead 7-bight knot from knotwork-soundholes, its 60 mm cut file scaled to 48, turned so a bight points at every corner of the face, and set 5.5 mm off the face's centre towards one corner. It is a <strong>cut-out</strong>: the removed material is the open area and the ribbon is what stays, and the ribbon's peaks deliberately overrun the rim so the rosette fuses into the face rather than dropping out when the last cut closes. There is no continuous rim circle in the cut layer, and that is correct — adding one drops the rosette on the floor.</p>
 <p><strong><a href="https://gernreich.github.io/knotwork-soundholes/" target="_blank" rel="noopener">The knotwork sound holes repository</a></strong> documents this family in full and generates any coprime leads × bights, if you want a different fold count for a differently sided box.</p>
 <h2 id="before-you-cut">Before you cut</h2>
-<p><strong>Cut it in 3 mm Baltic birch plywood.</strong> That is what this is built in, and it is what the finger joints are sized for. Finger joints do not tolerate being cut in stock they were not sized for — too thin and they rattle, too thick and they will not go together — so if you substitute anything else, the joints have to be regenerated for it rather than merely scaled. <a href="https://github.com/florianfesti/boxes" target="_blank" rel="noopener">Boxes.py</a> is the route: its <code>RegularBox</code> generator draws an n-sided finger-jointed box and cuts the fingers for whatever <code>--thickness</code> you give it. <strong>Boxes.py is Florian Festi's, and is GPL-3.0-or-later</strong> — it is not included here, and the sheet below is something it drew rather than any part of it.</p>
-<pre><code>boxes --generator RegularBox --n 7 --radius_bottom 91 --h 65 \
-      --thickness 4 --top closed --output heptagon.svg</code></pre>
-<p>That is a seven-sided body in 4 mm stock. It is not this sheet — <code>--radius_bottom</code> is an inner radius measured at the corners, so the panel sizes come out near these rather than equal to them, and you will want to check them against the table above before cutting. The rosette is not part of it either; cut that separately into the face.</p>
+<p><strong>Cut it in 3 mm Baltic birch plywood.</strong> That is what this is built in, and it is what the finger joints are sized for. Finger joints do not tolerate being cut in stock they were not sized for — too thin and they rattle, too thick and they will not go together — so if you substitute anything else, regenerate the sheet for it rather than scaling it: <code>--ply=</code> in the next section. If the fit comes out loose or tight on your laser, recut at its real kerf with <code>--kerf=</code> (the house measure is 0.13 mm; this sheet was cut at 0.14).</p>
 <p><strong>No acoustic claim is made.</strong> A kalimba body is a resonator; how it sounds depends on how well the box closes and on the tines, neither of which these files decide.</p>
 <p><strong>The rosette removes a good half of its disc</strong> from a face that also has to hold the box square. Consider that before choosing a thin material.</p>
+<h2 id="changing-it">Changing it</h2>
+<p><code>kalimba.rs</code> draws the sheet from a few numbers. Build it with <code>cargo build --release</code> (it expects the lasermade-tools and knotwork-soundholes checkouts beside this one), then give it any of them as flags — a dash for each underscore:</p>
+<pre><code>target/release/kalimba --ply=4 --kerf=0.13</code></pre>
+<div class="tw">
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>default</th>
+<th>what it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ply</code></td>
+<td>3 mm</td>
+<td>the ply</td>
+</tr>
+<tr>
+<td><code>radius</code></td>
+<td>90 mm</td>
+<td>the box's outside corner radius</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>65 mm</td>
+<td>the box's outside height, face to face</td>
+</tr>
+<tr>
+<td><code>sides</code></td>
+<td>7</td>
+<td>sides of the box, and bights of the rosette; read only in the design</td>
+</tr>
+<tr>
+<td><code>finger</code></td>
+<td>2</td>
+<td>a finger's width, in plies</td>
+</tr>
+<tr>
+<td><code>space</code></td>
+<td>2</td>
+<td>the space between fingers, in plies</td>
+</tr>
+<tr>
+<td><code>kerf</code></td>
+<td>0.14 mm</td>
+<td>the laser's kerf: the box's outlines grow by half of it; not in the design</td>
+</tr>
+<tr>
+<td><code>rosette_d</code></td>
+<td>48 mm</td>
+<td>the rosette's rim, across</td>
+</tr>
+<tr>
+<td><code>rosette_offset</code></td>
+<td>5.5 mm</td>
+<td>the rosette's centre from the face's, towards a corner</td>
+</tr>
+<tr>
+<td><code>hole_d</code></td>
+<td>15 mm</td>
+<td>the plain face's round hole</td>
+</tr>
+<tr>
+<td><code>hole_offset</code></td>
+<td>7.3 mm</td>
+<td>the hole's centre from the face's, towards an edge</td>
+</tr>
+<tr>
+<td><code>stiffeners</code></td>
+<td>3</td>
+<td>stiffeners on the sheet</td>
+</tr>
+<tr>
+<td><code>stiffener_depth</code></td>
+<td>36.4 mm</td>
+<td>a stiffener, from the wall it sits against to its long edge</td>
+</tr>
+<tr>
+<td><code>stiffener_corner</code></td>
+<td>4.7 mm</td>
+<td>how far each of its two wall-side corners is cut back, along each side</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The box is <code>RegularBox</code>'s geometry: the faces are the outside heptagon with a slot under every wall finger, and each wall stands on one edge with its fingers counted along the inside edge, <code>finger</code> and <code>space</code> plies wide, and its ends jointed for the corner — one end fingered, the other cut back with slots for the next wall's fingers. At the defaults every outline lies on Boxes.py's own to within 0.05 mm². <code>sides</code> must be odd: the rosette has a bight for every side, and a 2-lead knot needs an odd number of bights to be one strand. knotwork-soundholes ships the 3, 5 and 7.</p>
+<p>Every run prints a validation block — fingers on every edge, the rosette and the hole clear of the walls, the rosette's openings counted, the stiffener's shape, the sheet fitting the 600 × 305 mm bed — and exits non-zero if any check fails.</p>
+<h2 id="solidcraft-design-and-step-file">SolidCraft design and STEP file</h2>
+<p><code>kalimba --solidcraft=DIR</code> writes the box as a parametric SolidCraft design, assembled: the plain face on the bench, the seven walls on its edges, the rosette face on top, one body each. Every parameter above except the kerf and the stiffeners is a parameter of the design, and every point of every part is written from them, so changing <code>ply</code>, <code>radius</code>, <code>height</code>, <code>finger</code>, <code>space</code> or the rosette's and hole's sizes and places in SolidCraft moves the parts with them. The design is the parts as they come off the laser, so the kerf is not in it, and the stiffeners are not either: where they go is drawn nowhere. The number of sides and the finger counts (<code>nb</code>, <code>nl</code>) stay as the defaults made them, and the design says so in read-only parameters: a change that would give an edge a finger more or fewer needs the generator.</p>
+<ul>
+<li><code>solidcraft/kalimba-septa-box.solidcraft.json</code> — the design, as SolidCraft's commands</li>
+<li><code>solidcraft/kalimba-septa-box.sc</code> — SolidCraft's own file, built from it</li>
+<li><code>step/kalimba-septa-box.step</code> — the solids as STEP, for any CAD program, built from it</li>
+</ul>
+<pre><code>solidcraft-cli run solidcraft/kalimba-septa-box.solidcraft.json --save solidcraft/kalimba-septa-box.sc --out step/kalimba-septa-box.step</code></pre>
+<p>Checked against the generator body by body, at the defaults and with eight parameters moved, every volume within 2e-6. Each pair of neighbouring walls overlaps by 37 mm³ at the inside of their corner, 0.63 mm² over the wall's height: that is RegularBox's angled finger joint as drawn, and the faces' slots and the walls' fingers do not overlap at all.</p>
 <h2 id="files">Files</h2>
 <div class="tw">
 <table>
@@ -228,6 +322,18 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 <td>display rendering — <strong>not</strong> a cut file</td>
 </tr>
 <tr>
+<td><code>kalimba.rs</code></td>
+<td>draws <code>KalimbaSeptaBox.svg</code> and writes the SolidCraft design: <code>target/release/kalimba</code></td>
+</tr>
+<tr>
+<td><code>solidcraft/</code></td>
+<td>the SolidCraft design and the <code>.sc</code> file built from it</td>
+</tr>
+<tr>
+<td><code>step/</code></td>
+<td>the STEP file built from the design</td>
+</tr>
+<tr>
 <td><code>kalimba-3d.html</code></td>
 <td>the 3D view, assembled from the cut files — drag to turn</td>
 </tr>
@@ -237,7 +343,7 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 </tr>
 <tr>
 <td><code>Cargo.toml</code> · <code>Cargo.lock</code></td>
-<td>the Rust package for <code>viewer.rs</code>; it expects the lasermade-tools checkout beside this one</td>
+<td>the Rust package for <code>kalimba.rs</code> and <code>viewer.rs</code>; it expects the lasermade-tools and knotwork-soundholes checkouts beside this one</td>
 </tr>
 <tr>
 <td><code>.repro</code></td>
