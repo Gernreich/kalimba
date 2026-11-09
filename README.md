@@ -115,8 +115,12 @@ the plain face on the bench, the seven walls on its edges, the rosette face on t
 body each. Every parameter except the kerf and the stiffeners is a parameter of the
 design and every point is written from them. The kerf is not in it (it is the parts as
 they come off the laser), nor are the stiffeners (where they go is drawn nowhere); the
-number of sides and the finger counts `nb` and `nl` are read-only, as the defaults made
-them. SolidCraft builds the `.sc` and STEP files from it, and `.repro` checks all three:
+number of sides is read-only. The finger counts follow the sizes: `nb` (along a wall's
+top and bottom) is `floor(side0/(fw + sw))` and `nl` (up its ends) `floor(wall_l/(fw +
+sw))`, as Boxes.py counts them, and each wall is its plain body with one finger top and
+bottom and one corner finger or slot at each end, patterned that many times; each face
+is the plain heptagon with one slot per edge, patterned the same way. Lengthen the box
+and the fingers fill the new length. SolidCraft builds the `.sc` and STEP files from it, and `.repro` checks all three:
 
 ```
 solidcraft-cli run solidcraft/kalimba-septa-box.solidcraft.json --save solidcraft/kalimba-septa-box.sc --out step/kalimba-septa-box.step
@@ -126,10 +130,13 @@ solidcraft-cli run solidcraft/kalimba-septa-box.solidcraft.json --save solidcraf
 - `solidcraft/kalimba-septa-box.sc`
 - `step/kalimba-septa-box.step`
 
-Checked against the generator body by body, at the defaults and with eight parameters
-moved: every volume within 2e-6. Neighbouring walls overlap by 37 mm³ at the inside of
-each corner (0.63 mm² over the wall's height) — RegularBox's angled finger joint as
-drawn; the fingers and the faces' slots do not overlap.
+Checked against the generator body by body: at the defaults, identical to the design
+whose outlines were written point by point; and set to a 200 mm radius and a 150 mm
+height (14 fingers along, 12 up, where the defaults have 6 and 4), every volume within
+4e-7 of the cut sheet the generator draws at those sizes. Neighbouring walls overlap at
+the inside of each corner, 37 mm³ at the defaults and more with more fingers up the end:
+RegularBox's angled finger joint as drawn. The fingers and the faces' slots do not
+overlap.
 
 ## Files
 

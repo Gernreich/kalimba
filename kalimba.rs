@@ -478,8 +478,8 @@ fn design(p: &Params, b: &Bx, k: &Knot) -> (String, Vec<(String, f64)>) {
     s.len("sw", "space*ply", "read only: a space's width");
     s.len("side0", format!("2*sin({deg})*(radius - ply/cos({deg}))"), "read only: a wall's inside length");
     s.len("wall_l", "height - 2*ply", "read only: a wall between the faces");
-    s.num("nb", b.nb.to_string(), "read only: fingers along a wall's top and bottom, the defaults' count");
-    s.num("nl", b.nl.to_string(), "read only: fingers up a wall's end, the defaults' count");
+    s.num("nb", "floor(side0/(fw + sw))", "read only: fingers along a wall's top and bottom, as many as fit");
+    s.num("nl", "floor(wall_l/(fw + sw))", "read only: fingers up a wall's end, as many as fit");
     s.len("lob", "side0 - nb*(fw + sw) + sw", "read only: what is left along a wall's bottom, half at each end");
     s.len("lol", "wall_l - nl*(fw + sw) + sw", "read only: what is left up a wall's end, half at each end");
     s.len("tp", format!("ply*tan({deg})"), "read only: how far a slotted end stands past the inside corner");
@@ -490,28 +490,93 @@ fn design(p: &Params, b: &Bx, k: &Knot) -> (String, Vec<(String, f64)>) {
     let face = b.face();
     let fa = shoe(&face.iter().map(|q| b.val(q)).collect::<Vec<_>>());
     let t = b.v("ply");
+    // a rectangle of expressions, x0..x1 by y0..y1
+    let rect = |x0: &str, x1: &str, y0: &str, y1: &str| -> Vec<[String; 2]> {
+        [(x0, y0), (x1, y0), (x1, y1), (x0, y1)].iter().map(|(x, y)| [x.to_string(), y.to_string()]).collect()
+    };
+    // a face: the outside heptagon, and one slot under a wall's first finger
+    // on each edge, patterned along it as many times as the wall has fingers
+    let heptagon: Vec<[String; 2]> = (0..n)
+        .map(|k| {
+            let (c, _) = b.corner_dir(k);
+            [format!("{}*radius", nn(c.0)), format!("{}*radius", nn(c.1))]
+        })
+        .collect();
+    let slots = |s: &mut Script, face: &str, offset: Option<&str>| {
+        for k in 0..n {
+            let (c, d) = b.corner_dir(k);
+            let m = (-d.1, d.0); // inward
+            // from the corner: along d by `along`, in by `inn`
+            let at = |along: &str, inn: &str| -> [String; 2] {
+                [format!("{}*radius + {}*({along}) + {}*({inn})", nn(c.0), nn(d.0), nn(m.0)), format!("{}*radius + {}*({along}) + {}*({inn})", nn(c.1), nn(d.1), nn(m.1))]
+            };
+            let (s0, s1) = ("tp + lob/2", "tp + lob/2 + fw");
+            // out past the edge too, so the cut leaves no skin on it
+            let v = vec![at(s0, "-ply"), at(s1, "-ply"), at(s1, "ply"), at(s0, "ply")];
+            let name = format!("{face} slot {}", k + 1);
+            let sk = match offset {
+                Some(o) => s.sketch("XY", Some(o), &format!("{name} sketch")),
+                None => s.sketch("XY", None, &format!("{name} sketch")),
+            };
+            s.poly(&v);
+            s.finish();
+            s.extrude(&sk, "ply", false, "cut", &[face], &name);
+            s.pattern(&name, [d.0, d.1, 0.0], "nb", "fw + sw");
+        }
+    };
     // the plain face, on the bench
     let sk = s.sketch("XY", None, "bottom face sketch");
-    s.poly(&pts(&face));
+    s.poly(&heptagon);
     s.cmd("sketch.circle.center", r#"{"center":["0 mm","-hole_offset"],"diameter":"hole_d"}"#.into());
     s.finish();
     s.extrude(&sk, "ply", false, "new", &[], "bottom face");
+    slots(&mut s, "bottom face", None);
     vols.push(("bottom face".into(), (fa - PI * p.get("hole_d").powi(2) / 4.0) * t));
-    // the walls, each on its edge
+    // the walls, each on its edge: the body between the faces, then one
+    // finger top and bottom and one at each end, patterned as many times as
+    // fit; a slotted end has its slots cut the same way
     for (i, &(lg, rg)) in kinds(n).iter().enumerate() {
         let w = b.wall(lg, rg);
         let a = 2.0 * PI * i as f64 / n as f64;
+        let dir = [a.cos(), a.sin(), 0.0];
         let name = format!("wall {}", i + 1);
-        let sk = s.sketch_on([0.0, 0.0, 0.0], [a.cos(), a.sin(), 0.0], [0.0, 0.0, 1.0], Some("a_out"), &format!("{name} sketch"));
-        let v: Vec<[String; 2]> = w.iter().map(|q| [q.x.add(&Lin::of("side0", -0.5)).e(), q.y.e()]).collect();
-        s.poly(&v);
+        let plane = |s: &mut Script, what: &str| s.sketch_on([0.0, 0.0, 0.0], dir, [0.0, 0.0, 1.0], Some("a_out"), &format!("{name} {what} sketch"));
+        // x in the sketch is from the wall's middle
+        let x = |e: &str| format!("{e} - side0/2");
+        let left = if lg { "0 mm" } else { "-tp" };
+        let right = if rg { "side0" } else { "side0 + tp" };
+        let sk = plane(&mut s, "body");
+        s.poly(&rect(&x(left), &x(right), "ply", "height - ply"));
         s.finish();
         s.extrude(&sk, "ply", true, "new", &[], &name);
+        // a finger down through the bottom face and one up through the top
+        let f = format!("{name} fingers");
+        let sk = plane(&mut s, "fingers");
+        s.poly(&rect(&x("lob/2"), &x("lob/2 + fw"), "0 mm", "ply"));
+        s.poly(&rect(&x("lob/2"), &x("lob/2 + fw"), "height - ply", "height"));
+        s.finish();
+        s.extrude(&sk, "ply", true, "join", &[&name], &f);
+        s.pattern(&f, dir, "nb", "fw + sw");
+        // the two ends: fingers out past the corner, or slots cut back
+        for (end, g, at) in [("left", lg, left), ("right", rg, right)] {
+            let e = format!("{name} {end} end");
+            let sk = plane(&mut s, &format!("{end} end"));
+            let (x0, x1, op) = match (end, g) {
+                ("left", true) => ("-hg".to_string(), "0 mm".to_string(), "join"),
+                ("right", true) => ("side0".to_string(), "side0 + hg".to_string(), "join"),
+                ("left", false) => (format!("{at} - ply"), format!("{at} + hg"), "cut"),
+                _ => (format!("{at} - hg"), format!("{at} + ply"), "cut"),
+            };
+            s.poly(&rect(&x(&x0), &x(&x1), "ply + lol/2", "ply + lol/2 + fw"));
+            s.finish();
+            s.extrude(&sk, "ply", true, op, &[&name], &e);
+            s.pattern(&e, [0.0, 0.0, 1.0], "nl", "fw + sw");
+        }
         vols.push((name, shoe(&w.iter().map(|q| b.val(q)).collect::<Vec<_>>()) * t));
     }
     // the rosette face, on top
     let sk = s.sketch("XY", Some("height - ply"), "top face sketch");
-    s.poly(&pts(&face));
+    s.poly(&heptagon);
     let mut open = 0.0;
     for l in &k.cut {
         let v: Vec<Pt> = l.iter().map(|&q| rosette_pt(b, k, q)).collect();
@@ -520,6 +585,7 @@ fn design(p: &Params, b: &Bx, k: &Knot) -> (String, Vec<(String, f64)>) {
     }
     s.finish();
     s.extrude(&sk, "ply", false, "new", &[], "top face");
+    slots(&mut s, "top face", Some("height - ply"));
     vols.push(("top face".into(), (fa - open) * t));
     s.measure();
     (s.text(), vols)
